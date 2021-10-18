@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivPostImage;
     private Button btnSubmit;
     private File photoFile;
+    public ProgressBar pbLoading;
     private String photoFileName = "photo.jpg";
 
     @Override
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
         btnSignOut = findViewById(R.id.btnSignOut);
+        pbLoading = findViewById(R.id.pbLoading);
+
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +66,16 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pbLoading.setVisibility(ProgressBar.VISIBLE);
                 String description = etDescription.getText().toString();
                 if (description.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Description can't be empty", Toast.LENGTH_SHORT).show();
+                    pbLoading.setVisibility(ProgressBar.INVISIBLE);
                     return;
                 }
                 if (photoFile == null || ivPostImage.getDrawable() == null) {
                     Toast.makeText(MainActivity.this, "There is no image", Toast.LENGTH_SHORT).show();
+                    pbLoading.setVisibility(ProgressBar.INVISIBLE);
                     return;
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
@@ -159,11 +166,13 @@ public class MainActivity extends AppCompatActivity {
                 if (e != null) {
                     Log.e(TAG, "Error while saving", e);
                     Toast.makeText(MainActivity.this, "Error while saving", Toast.LENGTH_SHORT).show();
+                    pbLoading.setVisibility(ProgressBar.INVISIBLE);
                 }
                 Log.i(TAG, "Post save was successful!");
                 etDescription.setText("");
                 ivPostImage.setImageResource(0);
                 Toast.makeText(MainActivity.this, "Successfully submitted!", Toast.LENGTH_SHORT).show();
+                pbLoading.setVisibility(ProgressBar.INVISIBLE);
             }
         });
     }
