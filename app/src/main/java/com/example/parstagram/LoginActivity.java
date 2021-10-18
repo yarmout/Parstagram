@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Sorry, this was an issue when signing up", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Toast.makeText(LoginActivity.this, "Successfully signed up!", Toast.LENGTH_SHORT).show();
                 loginUser(username, password);
             }
         });
