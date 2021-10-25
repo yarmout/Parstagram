@@ -73,6 +73,8 @@ public class ComposeFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
+        pbLoading = view.findViewById(R.id.pbLoading);
+        btnSignOut = view.findViewById(R.id.btnSignOut);
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +117,7 @@ public class ComposeFragment extends Fragment {
                     Log.e(TAG, "Error while saving", e);
                     Toast.makeText(getContext(), "Error while saving", Toast.LENGTH_SHORT).show();
                     pbLoading.setVisibility(ProgressBar.INVISIBLE);
+                    return;
                 }
                 Log.i(TAG, "Post save was successful!");
                 etDescription.setText("");
