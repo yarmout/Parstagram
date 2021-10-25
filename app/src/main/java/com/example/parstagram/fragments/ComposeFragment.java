@@ -103,6 +103,15 @@ public class ComposeFragment extends Fragment {
                 savePost(description, currentUser, photoFile);
             }
         });
+
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseUser.logOut();
+                goLoginActivity();
+                Toast.makeText(getContext(), "Successfully logged out!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void savePost(String description, ParseUser currentUser, File photoFile) {
