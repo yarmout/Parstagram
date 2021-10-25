@@ -5,12 +5,9 @@
       <map>
         <entry key="..\:/Users/Yezen/AndroidStudioProjects/Parstagram/app/src/main/res/layout/activity_login.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/Yezen/StudioProjects/Parstagram/app/src/main/res/layout/activity_main.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/Yezen/StudioProjects/Parstagram/app/src/main/res/layout/fragment_posts.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/Yezen/StudioProjects/Parstagram/app/src/main/res/layout/item_post.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/Yezen/StudioProjects/Parstagram/app/src/main/res/xml/fileprovider.xml" value="0.38229166666666664" />
-        <entry key="..\:/Users/ya82/AndroidStudioProjects/Parstagram/app/src/main/res/drawable/custom_input.xml" value="0.375" />
-        <entry key="..\:/Users/ya82/AndroidStudioProjects/Parstagram/app/src/main/res/layout/activity_login.xml" value="0.18" />
-        <entry key="..\:/Users/ya82/AndroidStudioProjects/Parstagram/app/src/main/res/layout/fragment_compose.xml" value="0.33" />
-        <entry key="..\:/Users/ya82/AndroidStudioProjects/Parstagram/app/src/main/res/layout/sample.xml" value="0.5520833333333334" />
-        <entry key="..\:/Users/ya82/AndroidStudioProjects/Parstagram/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.5" />
       </map>
     </option>
   </component>
